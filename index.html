@@ -246,7 +246,7 @@
       font-weight: 800;
     }
 
-    /* بەشی چالاکیی ژینگەدۆستی */
+    /* بەشی چالاکییەکان */
 
     .activities-section {
       background: #EDF5F3;
@@ -258,9 +258,15 @@
       margin: auto;
     }
 
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+      align-items: start;
+    }
+
     .activity-card {
-      max-width: 650px;
-      margin: 0 auto;
+      width: 100%;
       background: white;
       border-radius: 20px;
       overflow: hidden;
@@ -276,7 +282,7 @@
 
     .activity-image {
       width: 100%;
-      height: 340px;
+      height: 300px;
       display: block;
       object-fit: cover;
       background: #E5F3F1;
@@ -299,7 +305,7 @@
 
     .activity-content h3 {
       color: var(--deep-teal);
-      font-size: 25px;
+      font-size: 23px;
       margin-bottom: 10px;
     }
 
@@ -464,6 +470,11 @@
 
       .section { padding: 55px 18px; }
 
+      .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
       .activity-image { height: 230px; }
 
       .activity-content { padding: 22px 17px; }
@@ -548,46 +559,92 @@
           <a href="activities.html" class="activity-more-btn">بینینی هەموو چالاکییەکان</a>
         </div>
 
-        <div class="activity-card">
+        <div class="activities-grid">
 
-          <img
-            class="activity-image"
-            src="FB_IMG_1793805664782.jpg"
-            alt="هەڵمەتی پاککردنەوە"
-          >
+          <!-- چالاکیی کەرتی ژینگەدۆستی -->
 
-          <div class="activity-content">
+          <div class="activity-card">
 
-            <span class="activity-category">ژینگەدۆستی</span>
-
-            <h3>هەڵمەتی پاککردنەوە</h3>
-
-            <p>
-              بەیەکەوە بۆ ژینگەیەکی پاکتر و داهاتوویەکی سەوزتر.
-            </p>
-
-            <button
-              class="activity-more-btn"
-              id="activityToggle"
-              onclick="toggleActivity()"
-              aria-expanded="false"
-              aria-controls="activityDetails"
+            <img
+              class="activity-image"
+              src="FB_IMG_1793805664782.jpg"
+              alt="چالاکی پاککردنەوەی چەمچەماڵ"
             >
-              زیاتر بزانە
-            </button>
 
-            <div class="activity-details" id="activityDetails">
-              <h4>هەڵمەتی پاککردنەوەی هەرەوەزی کوردستان</h4>
+            <div class="activity-content">
+
+              <span class="activity-category">ژینگەدۆستی</span>
+
+              <h3>پاککردنەوەی چەمچەماڵ</h3>
+
               <p>
-                لە ٢١/٣/٢٠٢٦ هەنگاوێکمان بۆ پاراستنی ژینگە هەڵگرت
-                و هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجامدا،
-                بە بەشداریی دەزگای ئاسایشی هەرێمی کوردستان و
-                بەشداریی چین و توێژە فەرمی و نافەرمییەکان.
+                هەنگاوێک بۆ پاراستنی ژینگە و هاوکاریی خەڵکی چەمچەماڵ.
               </p>
-              <span class="activity-date">بەرواری چالاکی: ٢١/٣/٢٠٢٦</span>
-            </div>
 
+              <button
+                class="activity-more-btn"
+                onclick="toggleActivity('environmentDetails', this)"
+                aria-expanded="false"
+                aria-controls="environmentDetails"
+              >
+                زیاتر بزانە
+              </button>
+
+              <div class="activity-details" id="environmentDetails">
+                <h4>چالاکی پاککردنەوەی چەمچەماڵ</h4>
+                <p>
+                  چالاکییەکی ژینگەدۆستی بۆ پاککردنەوەی چەمچەماڵ،
+                  لەگەڵ هاوکاری و پشتگیریی زیانلێکەوتووانی لافاو،
+                  بە مەبەستی پاراستنی ژینگە و خزمەتکردنی کۆمەڵگە.
+                </p>
+                <span class="activity-date">بەرواری چالاکی: ٩/١٢/٢٠٢٥</span>
+              </div>
+
+            </div>
           </div>
+
+          <!-- چالاکیی کەرتی نیشتمانی و کەلتووری -->
+
+          <div class="activity-card">
+
+            <img
+              class="activity-image"
+              src="Screenshot_20261104_190752_Instagram.jpg"
+              alt="هەڵمەتی ئاڵای کوردستان"
+            >
+
+            <div class="activity-content">
+
+              <span class="activity-category">نیشتمانی و کەلتووری</span>
+
+              <h3>ئاڵای کوردستان</h3>
+
+              <p>
+                هەنگاوێک بۆ زیندوو ڕاگرتنی هێما و ناسنامەی نیشتمانی.
+              </p>
+
+              <button
+                class="activity-more-btn"
+                onclick="toggleActivity('nationalDetails', this)"
+                aria-expanded="false"
+                aria-controls="nationalDetails"
+              >
+                زیاتر بزانە
+              </button>
+
+              <div class="activity-details" id="nationalDetails">
+                <h4>هەڵمەتی ئاڵای کوردستان</h4>
+                <p>
+                  هەڵمەتی نوێکردنەوە و بەرزکردنەوەی ئاڵای کوردستان
+                  لە سەرانسەری هەرێمی کوردستان، بە مەبەستی زیندوو
+                  ڕاگرتنی هێما و ناسنامەی نیشتمانی.
+                </p>
+                <span class="activity-date">بەرواری چالاکی: ١٧/١٢/٢٠٢٥</span>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -644,16 +701,17 @@
       document.getElementById("navigation").classList.toggle("active");
     }
 
-    function toggleActivity() {
-      const details = document.getElementById("activityDetails");
-      const button = document.getElementById("activityToggle");
+    function toggleActivity(detailsId, button) {
+      const details = document.getElementById(detailsId);
 
       details.classList.toggle("show");
 
       const isOpen = details.classList.contains("show");
 
       button.setAttribute("aria-expanded", isOpen);
-      button.textContent = isOpen ? "داخستنی وردەکاری" : "زیاتر بزانە";
+      button.textContent = isOpen
+        ? "داخستنی وردەکاری"
+        : "زیاتر بزانە";
     }
   </script>
 
