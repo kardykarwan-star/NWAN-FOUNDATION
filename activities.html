@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>چالاکییەکان | NWAN FOUNDATION</title>
+
+  <style>
+    @font-face {
+      font-family: 'K24 Kurdish';
+      src: url('./K24KurdishBold-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      --deep-teal: #005B60;
+      --turquoise: #078F91;
+      --gold: #C69A43;
+      --light-bg: #F4F8F7;
+      --text: #234447;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, button, a, h1, h2, h3, p, span {
+      font-family: 'K24 Kurdish', sans-serif;
+    }
+
+    body {
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a { text-decoration: none; }
+
+    header {
+      background: white;
+      box-shadow: 0 3px 18px rgba(0,60,65,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      color: var(--deep-teal);
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--deep-teal);
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: var(--deep-teal);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .contact-nav {
+      background: var(--gold);
+      color: #183D3E;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    .page-heading {
+      background: linear-gradient(135deg, #00494D, #078F91);
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .page-heading h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .page-heading p {
+      color: #F0FAF9;
+      font-size: 14px;
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      color: var(--deep-teal);
+      font-size: 27px;
+    }
+
+    .section-title span {
+      display: block;
+      width: 65px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 5px;
+      margin: 10px auto;
+    }
+
+    .section-title p {
+      color: #617779;
+      font-size: 14px;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .activity-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,70,75,0.07);
+      border: 1px solid #E0ECE9;
+      transition: 0.3s;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 35px rgba(0,70,75,0.13);
+    }
+
+    .activity-image {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      background: #E5F3F1;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 230px;
+      background: linear-gradient(135deg, #DDEFEA, #F5EBD5);
+      display: grid;
+      place-items: center;
+      color: var(--deep-teal);
+      font-size: 65px;
+    }
+
+    .activity-info {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .activity-info h3 {
+      color: var(--deep-teal);
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .activity-info p {
+      color: #617779;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .activity-link {
+      display: inline-block;
+      background: var(--deep-teal);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 9px;
+      transition: 0.3s;
+    }
+
+    .activity-link:hover {
+      background: var(--turquoise);
+      transform: translateY(-2px);
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 30px;
+      background: var(--gold);
+      color: #183D3E;
+      padding: 10px 25px;
+      border-radius: 9px;
+    }
+
+    footer {
+      background: #003F43;
+      color: #E7F1EF;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    footer strong { color: #E2BC6D; }
+
+    @media (max-width: 760px) {
+      .navbar { flex-wrap: wrap; }
+
+      .menu-btn { display: block; }
+
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      nav.active { display: flex; }
+
+      nav a {
+        padding: 10px;
+        border-top: 1px solid #E8F0EF;
+      }
+
+      .activities-grid { grid-template-columns: 1fr; }
+
+      .section { padding: 45px 18px; }
+
+      .page-heading h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+
+    <a href="index.html" class="brand">
+      <img src="file_00000000224c8246a91218ab6ae16654.png" alt="لۆگۆی بنیاتی نوان">
+      <div class="brand-name">
+        بنیاتی نوان
+        <span>NWAN FOUNDATION</span>
+      </div>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰ پەڕەکان</button>
+
+    <nav id="navigation">
+      <a href="index.html">سەرەکی</a>
+      <a href="index.html#about">دەربارەی ئێمە</a>
+      <a href="activities.html">چالاکییەکان</a>
+      <a href="index.html#values">بەهاکانمان</a>
+      <a href="contact.html" class="contact-nav">پەیوەندی کردن</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="page-heading">
+    <h1>چالاکییەکانمان</h1>
+    <p>بەیەکەوە بۆ خزمەتکردن و دروستکردنی کۆمەڵگەیەکی باشتر</p>
+  </section>
+
+  <section class="section">
+
+    <div class="section-title">
+      <h2>بوارەکانی چالاکییەکان</h2>
+      <span></span>
+      <p>بۆ بینینی وردەکاریی هەر بوارێک، دوگمەی ئەو بەشە دابگرە.</p>
+    </div>
+
+    <div class="activities-grid">
+
+      <div class="activity-card">
+        <img class="activity-image" src="FB_IMG_1793805664782.jpg" alt="هەڵمەتی پاککردنەوە">
+        <div class="activity-info">
+          <h3>🌳 ژینگەدۆستی</h3>
+          <p>پاراستنی ژینگە، پاککردنەوە و چاندنی دار بۆ داهاتوویەکی سەوزتر.</p>
+          <a class="activity-link" href="activity-detail.html?type=environment">چالاکییەکان ببینە</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="image-placeholder">🏛️</div>
+        <div class="activity-info">
+          <h3>نیشتمانی و کەلتووری</h3>
+          <p>پاراستن و ناساندنی کەلتوور، مێژوو و ناسنامەی کوردی.</p>
+          <a class="activity-link" href="activity-detail.html?type=culture">چالاکییەکان ببینە</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="image-placeholder">🤝</div>
+        <div class="activity-info">
+          <h3>خێرخوازی و هاوکاری مرۆیی</h3>
+          <p>یارمەتی و پشتگیریی خێزان و تاکە پێویستدارەکان.</p>
+          <a class="activity-link" href="activity-detail.html?type=humanitarian">چالاکییەکان ببینە</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="image-placeholder">📚</div>
+        <div class="activity-info">
+          <h3>پەروەردە و خوێندن</h3>
+          <p>پشتگیری خوێندکاران و هاندانی فێربوون و پەروەردە.</p>
+          <a class="activity-link" href="activity-detail.html?type=education">چالاکییەکان ببینە</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="image-placeholder">🩺</div>
+        <div class="activity-info">
+          <h3>تەندروستی و هۆشیاری</h3>
+          <p>بڵاوکردنەوەی هۆشیاری تەندروستی و پێشگیری.</p>
+          <a class="activity-link" href="activity-detail.html?type=health">چالاکییەکان ببینە</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="image-placeholder">❤️</div>
+        <div class="activity-info">
+          <h3>پشتگیریی کۆمەڵایەتی</h3>
+          <p>گرنگیدان بە منداڵان، کەسانی بەساڵاچوو و چینە پێویستدارەکان.</p>
+          <a class="activity-link" href="activity-detail.html?type=social">چالاکییەکان ببینە</a>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="image-placeholder">🌟</div>
+        <div class="activity-info">
+          <h3>گەنجان و گەشەپێدانی کۆمەڵگە</h3>
+          <p>ڕاهێنان، بەشداری و پەرەپێدانی تواناکانی گەنجان.</p>
+          <a class="activity-link" href="activity-detail.html?type=youth">چالاکییەکان ببینە</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;">
+      <a href="index.html" class="back-home">گەڕانەوە بۆ پەڕەی سەرەکی</a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 <strong>NWAN FOUNDATION</strong> - هەموو مافەکان پارێزراون.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navigation").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>
