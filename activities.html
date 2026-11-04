@@ -139,7 +139,7 @@
 
     .section-title {
       text-align: center;
-      margin-bottom: 35px;
+      margin-bottom: 45px;
     }
 
     .section-title h2 {
@@ -159,6 +159,42 @@
     .section-title p {
       color: #617779;
       font-size: 14px;
+    }
+
+    /* Category sections */
+
+    .activity-category-section {
+      margin-bottom: 55px;
+    }
+
+    .category-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 24px;
+      padding-bottom: 13px;
+      border-bottom: 2px solid #DCEAE7;
+    }
+
+    .category-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      display: grid;
+      place-items: center;
+      background: #E4F1EE;
+      border-radius: 13px;
+      font-size: 25px;
+    }
+
+    .category-heading h2 {
+      color: var(--deep-teal);
+      font-size: 22px;
+    }
+
+    .category-heading p {
+      color: #718486;
+      font-size: 12px;
     }
 
     .activities-grid {
@@ -189,16 +225,6 @@
       background: #E5F3F1;
     }
 
-    .image-placeholder {
-      width: 100%;
-      height: 230px;
-      background: linear-gradient(135deg, #DDEFEA, #F5EBD5);
-      display: grid;
-      place-items: center;
-      color: var(--deep-teal);
-      font-size: 65px;
-    }
-
     .activity-info {
       padding: 24px;
       text-align: center;
@@ -210,29 +236,26 @@
       margin-bottom: 8px;
     }
 
+    .activity-date {
+      display: inline-block;
+      color: #8B6A2F;
+      background: #F8F1E3;
+      padding: 4px 13px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 13px;
+    }
+
     .activity-info p {
       color: #617779;
       font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .activity-link {
-      display: inline-block;
-      background: var(--deep-teal);
-      color: white;
-      padding: 10px 25px;
-      border-radius: 9px;
-      transition: 0.3s;
-    }
-
-    .activity-link:hover {
-      background: var(--turquoise);
-      transform: translateY(-2px);
+      margin-bottom: 0;
+      text-align: justify;
     }
 
     .back-home {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 10px;
       background: var(--gold);
       color: #183D3E;
       padding: 10px 25px;
@@ -271,6 +294,14 @@
       .activities-grid { grid-template-columns: 1fr; }
       .section { padding: 45px 18px; }
       .page-heading h1 { font-size: 26px; }
+
+      .category-heading h2 {
+        font-size: 18px;
+      }
+
+      .activity-image {
+        height: 210px;
+      }
     }
   </style>
 </head>
@@ -313,75 +344,204 @@
     <div class="section-title">
       <h2>بوارەکانی چالاکییەکان</h2>
       <span></span>
-      <p>بۆ بینینی وردەکاریی هەر بوارێک، دوگمەی ئەو بەشە دابگرە.</p>
+      <p>چالاکییەکانی بنیاتی نوان لە بوارە جیاوازەکاندا</p>
     </div>
 
-    <div class="activities-grid">
+    <!-- ژینگەدۆستی -->
 
-      <div class="activity-card">
-        <img class="activity-image" src="FB_IMG_1793805664782.jpg" alt="هەڵمەتی پاککردنەوە">
-        <div class="activity-info">
-          <h3>🌳 ژینگەدۆستی</h3>
-          <p>پاراستنی ژینگە، پاککردنەوە و چاندنی دار بۆ داهاتوویەکی سەوزتر.</p>
-          <a class="activity-link" href="activity-detail.html?type=environment">چالاکییەکان ببینە</a>
+    <section class="activity-category-section">
+
+      <div class="category-heading">
+        <div class="category-icon">🌳</div>
+        <div>
+          <h2>ژینگەدۆستی</h2>
+          <p>پاراستنی ژینگە و پاک و جوان ڕاگرتنی شوێنە گشتییەکان</p>
         </div>
       </div>
 
-      <div class="activity-card">
-        <div class="image-placeholder">🏛️</div>
-        <div class="activity-info">
-          <h3>نیشتمانی و کەلتووری</h3>
-          <p>پاراستن و ناساندنی کەلتوور، مێژوو و ناسنامەی کوردی.</p>
-          <a class="activity-link" href="activity-detail.html?type=culture">چالاکییەکان ببینە</a>
+      <div class="activities-grid">
+
+        <article class="activity-card">
+          <img
+            class="activity-image"
+            src="FB_IMG_1793805664782.jpg"
+            alt="هەڵمەتی پاککردنەوە"
+            loading="lazy"
+          >
+          <div class="activity-info">
+            <h3>هەڵمەتی پاککردنەوە</h3>
+            <span class="activity-date">٢١/٣/٢٠٢٦</span>
+            <p>
+              لە ڕێکەوتی ٢١/٣/٢٠٢٦، بە هاوبەشیی دەزگای ئاسایشی هەرێمی
+              کوردستان و بەشداریی چین و توێژە فەرمی و نافەرمییەکان،
+              هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجام دا،
+              بە ئامانجی پاراستنی ژینگە و جوانکردنی شوێنە گشتییەکان.
+            </p>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <img
+            class="activity-image"
+            src="file_0000000011188211830ca8fe507bd585.png"
+            alt="پاککردنەوەی چەمچەماڵ"
+            loading="lazy"
+          >
+          <div class="activity-info">
+            <h3>پاککردنەوەی چەمچەماڵ</h3>
+            <span class="activity-date">٩/١٢/٢٠٢٥</span>
+            <p>
+              چالاکیی پاککردنەوەی چەمچەماڵ و هاوکاریی زیانلێکەوتووانی
+              لافاو، بە مەبەستی پاراستنی ژینگە و پشتیوانیی خەڵکی
+              زیانلێکەوتوو.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- نیشتمانی و کەلتووری -->
+
+    <section class="activity-category-section">
+
+      <div class="category-heading">
+        <div class="category-icon">🏛️</div>
+        <div>
+          <h2>نیشتمانی و کەلتووری</h2>
+          <p>پاراستن و زیندوو ڕاگرتنی ناسنامە و هێما نیشتمانییەکان</p>
         </div>
       </div>
 
-      <div class="activity-card">
-        <div class="image-placeholder">🤝</div>
-        <div class="activity-info">
-          <h3>خێرخوازی و هاوکاری مرۆیی</h3>
-          <p>یارمەتی و پشتگیریی خێزان و تاکە پێویستدارەکان.</p>
-          <a class="activity-link" href="activity-detail.html?type=humanitarian">چالاکییەکان ببینە</a>
+      <div class="activities-grid">
+
+        <article class="activity-card">
+          <img
+            class="activity-image"
+            src="Screenshot_20261104_190752_Instagram.jpg"
+            alt="هەڵمەتی ئاڵای کوردستان"
+            loading="lazy"
+          >
+          <div class="activity-info">
+            <h3>ئاڵای کوردستان</h3>
+            <span class="activity-date">١٧/١٢/٢٠٢٥</span>
+            <p>
+              هەڵمەتی نوێکردنەوە و بەرزکردنەوەی ئاڵای کوردستان لە
+              سەرانسەری هەرێمی کوردستان، بە مەبەستی زیندوو ڕاگرتنی
+              هێما و ناسنامەی نیشتمانی.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- پەروەردە و خوێندن -->
+
+    <section class="activity-category-section">
+
+      <div class="category-heading">
+        <div class="category-icon">📚</div>
+        <div>
+          <h2>پەروەردە و خوێندن</h2>
+          <p>پشتگیریی قوتابیان و ئاسانکردنی ڕێگای خوێندن</p>
         </div>
       </div>
 
-      <div class="activity-card">
-        <div class="image-placeholder">📚</div>
-        <div class="activity-info">
-          <h3>پەروەردە و خوێندن</h3>
-          <p>پشتگیری خوێندکاران و هاندانی فێربوون و پەروەردە.</p>
-          <a class="activity-link" href="activity-detail.html?type=education">چالاکییەکان ببینە</a>
+      <div class="activities-grid">
+
+        <article class="activity-card">
+          <img
+            class="activity-image"
+            src="Screenshot_20261104_191637_Instagram.jpg"
+            alt="دابینکردنی پێداویستیی قوتابیان"
+            loading="lazy"
+          >
+          <div class="activity-info">
+            <h3>پێویستی قوتابی</h3>
+            <span class="activity-date">١/١٠/٢٠٢٦</span>
+            <p>
+              لە ڕێکەوتی ١/١٠/٢٠٢٦، تەواوی پێداویستییەکانی قوتابیمان
+              بۆ سەدان قوتابی لە قوتابخانە بنەڕەتییەکانی کوردستان
+              دابین کرد، بە ئامانجی ئاسانکردنی ڕێگای خوێندن و
+              پشتگیریی قوتابیان.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- خێرخوازی و هاوکاری مرۆیی -->
+
+    <section class="activity-category-section">
+
+      <div class="category-heading">
+        <div class="category-icon">❤️</div>
+        <div>
+          <h2>خێرخوازی و هاوکاری مرۆیی</h2>
+          <p>یارمەتیدانی خێزانە پێویستدارەکان و پشتگیریی مرۆیی</p>
         </div>
       </div>
 
-      <div class="activity-card">
-        <div class="image-placeholder">🩺</div>
-        <div class="activity-info">
-          <h3>تەندروستی و هۆشیاری</h3>
-          <p>بڵاوکردنەوەی هۆشیاری تەندروستی و پێشگیری.</p>
-          <a class="activity-link" href="activity-detail.html?type=health">چالاکییەکان ببینە</a>
+      <div class="activities-grid">
+
+        <article class="activity-card">
+          <img
+            class="activity-image"
+            src="file_00000000926081f793b9ef4c19c541a8.png"
+            alt="دابەشکردنی سەبەتەی خۆراک"
+            loading="lazy"
+          >
+          <div class="activity-info">
+            <h3>سەبەتەی خۆراک</h3>
+            <span class="activity-date">١٠/٩/٢٠٢٦</span>
+            <p>
+              لە ڕۆژی ١٠/٩/٢٠٢٦، سەدان سەبەتەی خۆراکمان دابەش کرد
+              بەسەر هاوڵاتیانی پێویستدار لە کوردستان، بۆ پشتگیریی
+              خێزانەکان و دابینکردنی بەشێک لە پێداویستییە
+              سەرەکییەکانیان.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- تەندروستی و هۆشیاری -->
+
+    <section class="activity-category-section">
+
+      <div class="category-heading">
+        <div class="category-icon">🩺</div>
+        <div>
+          <h2>تەندروستی و هۆشیاری</h2>
+          <p>بەشداری لە چالاکییە تەندروستییەکان و یارمەتیدانی نەخۆشان</p>
         </div>
       </div>
 
-      <div class="activity-card">
-        <div class="image-placeholder">❤️</div>
-        <div class="activity-info">
-          <h3>پشتگیریی کۆمەڵایەتی</h3>
-          <p>گرنگیدان بە منداڵان، کەسانی بەساڵاچوو و چینە پێویستدارەکان.</p>
-          <a class="activity-link" href="activity-detail.html?type=social">چالاکییەکان ببینە</a>
-        </div>
-      </div>
+      <div class="activities-grid">
 
-      <div class="activity-card">
-        <div class="image-placeholder">🌟</div>
-        <div class="activity-info">
-          <h3>گەنجان و گەشەپێدانی کۆمەڵگە</h3>
-          <p>ڕاهێنان، بەشداری و پەرەپێدانی تواناکانی گەنجان.</p>
-          <a class="activity-link" href="activity-detail.html?type=youth">چالاکییەکان ببینە</a>
-        </div>
-      </div>
+        <article class="activity-card">
+          <img
+            class="activity-image"
+            src="IMG_7acd4d2f-c18b-4716-9998-987e05c69a35.jpg"
+            alt="چالاکیی خوێنبەخشین"
+            loading="lazy"
+          >
+          <div class="activity-info">
+            <h3>خوێنبەخشین</h3>
+            <span class="activity-date">١٤/٩/٢٠٢٦</span>
+            <p>
+              لە ڕێکەوتی ١٤/٩/٢٠٢٦، چالاکییەکی خوێنبەخشینمان
+              ئەنجام دا، بە مەبەستی دابینکردنی خوێنی پێویست و
+              یارمەتیدانی نەخۆشانی پێویستدار بە خوێن.
+            </p>
+          </div>
+        </article>
 
-    </div>
+      </div>
+    </section>
 
     <div style="text-align:center;">
       <a href="index.html" class="back-home">گەڕانەوە بۆ پەڕەی سەرەکی</a>
