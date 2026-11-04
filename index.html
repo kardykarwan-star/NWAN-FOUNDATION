@@ -260,6 +260,134 @@
       font-weight: 800;
     }
 
+    /* بەشی چالاکییەکان */
+
+    .activities-section {
+      background: #EDF5F3;
+      padding: 75px 20px;
+    }
+
+    .activities-container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .activity-card {
+      max-width: 650px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0, 70, 75, 0.10);
+      border: 1px solid #DDEAE7;
+      transition: 0.3s;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 70, 75, 0.15);
+    }
+
+    .activity-image {
+      width: 100%;
+      height: 340px;
+      display: block;
+      object-fit: cover;
+      background: #E5F3F1;
+    }
+
+    .activity-content {
+      padding: 27px;
+      text-align: center;
+    }
+
+    .activity-category {
+      display: inline-block;
+      background: #E5F3F1;
+      color: var(--deep-teal);
+      padding: 5px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .activity-content h3 {
+      color: var(--deep-teal);
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .activity-content > p {
+      color: #617779;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .activity-more-btn {
+      background: var(--deep-teal);
+      color: white;
+      border: none;
+      padding: 11px 28px;
+      border-radius: 9px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .activity-more-btn:hover {
+      background: var(--turquoise);
+      transform: translateY(-2px);
+    }
+
+    .activity-details {
+      display: none;
+      text-align: right;
+      background: #F4F8F7;
+      border-top: 3px solid var(--gold);
+      padding: 25px;
+      margin-top: 25px;
+      border-radius: 12px;
+      animation: showDetails 0.4s ease;
+    }
+
+    .activity-details.show {
+      display: block;
+    }
+
+    .activity-details h4 {
+      color: var(--deep-teal);
+      font-size: 19px;
+      margin-bottom: 12px;
+    }
+
+    .activity-details p {
+      color: var(--text);
+      font-size: 14px;
+      line-height: 2.2;
+      text-align: justify;
+    }
+
+    .activity-date {
+      display: inline-block;
+      margin-top: 18px;
+      color: #806020;
+      background: #F8EED9;
+      padding: 6px 15px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    @keyframes showDetails {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .values {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -374,6 +502,22 @@
       .section {
         padding: 55px 18px;
       }
+
+      .activity-image {
+        height: 230px;
+      }
+
+      .activity-content {
+        padding: 22px 17px;
+      }
+
+      .activity-content h3 {
+        font-size: 21px;
+      }
+
+      .activity-details {
+        padding: 18px;
+      }
     }
   </style>
 </head>
@@ -399,6 +543,7 @@
       <nav id="navigation">
         <a href="#home">سەرەکی</a>
         <a href="#about">دەربارەی ئێمە</a>
+        <a href="#activities">چالاکییەکان</a>
         <a href="#values">بەهاکانمان</a>
         <a href="contact.html" class="contact-nav">پەیوەندی کردن</a>
       </nav>
@@ -440,6 +585,69 @@
         </p>
       </div>
 
+    </section>
+
+    <!-- بەشی چالاکییەکان -->
+
+    <section class="activities-section" id="activities">
+
+      <div class="activities-container">
+
+        <div class="section-title">
+          <h2>چالاکییەکانمان</h2>
+          <span></span>
+          <p>هەنگاوەکانمان بۆ خزمەتکردن و گەشەپێدانی کۆمەڵگە</p>
+        </div>
+
+        <div class="activity-card">
+
+          <img
+            class="activity-image"
+            src="FB_IMG_1793805664782.jpg"
+            alt="هەڵمەتی پاککردنەوە و چالاکییە ژینگەدۆستییەکان"
+          >
+
+          <div class="activity-content">
+
+            <span class="activity-category">ژینگەدۆستی</span>
+
+            <h3>هەڵمەتی پاککردنەوە</h3>
+
+            <p>
+              بەیەکەوە بۆ ژینگەیەکی پاکتر و داهاتوویەکی سەوزتر.
+            </p>
+
+            <button
+              class="activity-more-btn"
+              id="activityToggle"
+              onclick="toggleActivity()"
+              aria-expanded="false"
+              aria-controls="activityDetails"
+            >
+              زیاتر بزانە
+            </button>
+
+            <div class="activity-details" id="activityDetails">
+
+              <h4>هەڵمەتی پاککردنەوەی هەرەوەزی کوردستان</h4>
+
+              <p>
+                لە ٢١/٣/٢٠٢٦ هەنگاوێکمان بۆ پاراستنی ژینگە هەڵگرت
+                و هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجامدا،
+                بە بەشداریی دەزگای ئاسایشی هەرێمی کوردستان و
+                بەشداریی چین و توێژە فەرمی و نافەرمییەکان.
+              </p>
+
+              <span class="activity-date">
+                بەرواری چالاکی: ٢١/٣/٢٠٢٦
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <section class="section" id="values">
@@ -491,6 +699,18 @@
   <script>
     function toggleMenu() {
       document.getElementById("navigation").classList.toggle("active");
+    }
+
+    function toggleActivity() {
+      const details = document.getElementById("activityDetails");
+      const button = document.getElementById("activityToggle");
+
+      details.classList.toggle("show");
+
+      const isOpen = details.classList.contains("show");
+
+      button.setAttribute("aria-expanded", isOpen);
+      button.textContent = isOpen ? "داخستنی وردەکاری" : "زیاتر بزانە";
     }
   </script>
 
