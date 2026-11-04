@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ckb" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>وردەکاریی چالاکی | NWAN FOUNDATION</title>
+  <title>وردەکاریی چالاکییەکان | NWAN FOUNDATION</title>
 
   <style>
     @font-face {
@@ -22,13 +21,9 @@
       --text: #234447;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body, a, h1, h2, h3, p, span {
+    body, button, a, h1, h2, h3, p, span {
       font-family: 'K24 Kurdish', sans-serif;
     }
 
@@ -43,6 +38,9 @@
     header {
       background: white;
       box-shadow: 0 3px 18px rgba(0,60,65,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .navbar {
@@ -52,14 +50,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 15px;
+      gap: 20px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; }
 
     .brand img {
       width: 65px;
@@ -81,82 +75,137 @@
       text-align: right;
     }
 
-    .detail-heading {
+    nav { display: flex; align-items: center; gap: 25px; }
+    nav a { color: var(--deep-teal); font-size: 14px; }
+    nav a:hover { color: var(--gold); }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: var(--deep-teal);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .contact-nav {
+      background: var(--gold);
+      color: #183D3E;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    .page-heading {
       background: linear-gradient(135deg, #00494D, #078F91);
       color: white;
       text-align: center;
-      padding: 50px 20px;
+      padding: 55px 20px;
     }
 
-    .detail-heading h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
+    .page-heading h1 { font-size: 32px; margin-bottom: 10px; }
+    .page-heading p { color: #F0FAF9; font-size: 14px; }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 55px 24px 65px;
     }
 
-    .detail-heading p {
-      color: #F0FAF9;
-      font-size: 14px;
+    .section-title { text-align: center; margin-bottom: 35px; }
+
+    .section-title h2 {
+      color: var(--deep-teal);
+      font-size: 27px;
     }
 
-    .detail-container {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
+    .section-title span {
+      display: block;
+      width: 65px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 5px;
+      margin: 10px auto;
     }
 
-    .activity-entry {
+    .section-title p { color: #617779; font-size: 14px; }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .activity-card {
       background: white;
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 8px 30px rgba(0,70,75,0.07);
       border: 1px solid #E0ECE9;
-      margin-bottom: 30px;
+      transition: 0.3s;
     }
 
-    .activity-entry img {
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 35px rgba(0,70,75,0.13);
+    }
+
+    .activity-image {
       width: 100%;
-      max-height: 430px;
+      height: 260px;
       object-fit: cover;
       display: block;
+      background: #E5F3F1;
     }
 
-    .activity-content {
-      padding: 30px;
-    }
+    .activity-info { padding: 24px; text-align: center; }
 
-    .activity-content h2 {
+    .activity-info h2 {
       color: var(--deep-teal);
-      font-size: 23px;
-      margin-bottom: 12px;
-    }
-
-    .activity-content p {
-      color: var(--text);
-      font-size: 15px;
-      line-height: 2.2;
-      text-align: justify;
+      font-size: 22px;
+      margin-bottom: 8px;
     }
 
     .activity-date {
       display: inline-block;
-      margin-top: 18px;
-      background: #F8EED9;
-      color: #806020;
-      padding: 7px 15px;
-      border-radius: 8px;
-      font-size: 13px;
+      color: #8B6A2F;
+      background: #F8F1E3;
+      padding: 4px 13px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 13px;
     }
 
-    .back-link {
+    .activity-info p {
+      color: #617779;
+      font-size: 14px;
+      text-align: justify;
+    }
+
+    .empty-message {
+      background: white;
+      border: 1px solid #E0ECE9;
+      border-radius: 18px;
+      padding: 35px 22px;
+      text-align: center;
+      color: #617779;
+      box-shadow: 0 8px 30px rgba(0,70,75,0.05);
+    }
+
+    .empty-message .empty-icon {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .back-home {
       display: inline-block;
-      margin-top: 25px;
-      background: var(--deep-teal);
-      color: white;
-      padding: 11px 25px;
+      margin-top: 30px;
+      background: var(--gold);
+      color: #183D3E;
+      padding: 10px 25px;
       border-radius: 9px;
     }
-
-    .back-link:hover { background: var(--turquoise); }
 
     footer {
       background: #003F43;
@@ -164,22 +213,38 @@
       text-align: center;
       padding: 25px 15px;
       font-size: 13px;
-      margin-top: 60px;
     }
 
     footer strong { color: #E2BC6D; }
 
-    @media (max-width: 600px) {
-      .detail-heading h1 { font-size: 24px; }
-      .activity-content { padding: 22px 18px; }
-      .activity-content h2 { font-size: 20px; }
-      .detail-container { margin: 30px auto; }
+    @media (max-width: 760px) {
+      .navbar { flex-wrap: wrap; }
+      .menu-btn { display: block; }
+
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      nav.active { display: flex; }
+
+      nav a {
+        padding: 10px;
+        border-top: 1px solid #E8F0EF;
+      }
+
+      .activities-grid { grid-template-columns: 1fr; }
+      .section { padding: 40px 18px 50px; }
+      .page-heading h1 { font-size: 26px; }
+      .activity-image { height: 220px; }
     }
   </style>
 </head>
 
 <body>
-
 <header>
   <div class="navbar">
     <a href="index.html" class="brand">
@@ -189,73 +254,196 @@
         <span>NWAN FOUNDATION</span>
       </div>
     </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰ پەڕەکان</button>
+
+    <nav id="navigation">
+      <a href="index.html">سەرەکی</a>
+      <a href="index.html#about">دەربارەی ئێمە</a>
+      <a href="activities.html">چالاکییەکان</a>
+      <a href="index.html#values">بەهاکانمان</a>
+      <a href="contact.html" class="contact-nav">پەیوەندی کردن</a>
+    </nav>
   </div>
 </header>
 
 <main>
-
-  <section class="detail-heading">
-    <h1>ژینگەدۆستی</h1>
-    <p>چالاکییەکانمان بۆ پاراستنی ژینگە</p>
+  <section class="page-heading">
+    <h1 id="categoryTitle">چالاکییەکان</h1>
+    <p id="categoryDescription">چالاکی و هەوڵەکانی بنیاتی نوان</p>
   </section>
 
-  <div class="detail-container">
+  <section class="section">
+    <div class="section-title">
+      <h2 id="sectionTitle">چالاکییەکانمان</h2>
+      <span></span>
+      <p>وردەکاریی چالاکییە ئەنجامدراوەکانمان لەم بەشەدا ببینە.</p>
+    </div>
 
-    <!-- چالاکی یەکەم: هەڵمەتی پاککردنەوە -->
+    <div class="activities-grid" id="activitiesList"></div>
 
-    <article class="activity-entry">
-
-      <img src="FB_IMG_1793805664782.jpg" alt="هەڵمەتی پاککردنەوەی هەرەوەزی کوردستان">
-
-      <div class="activity-content">
-        <h2>هەڵمەتی پاککردنەوە</h2>
-
-        <p>
-          لە ٢١/٣/٢٠٢٦ هەنگاوێکمان بۆ پاراستنی ژینگە هەڵگرت
-          و هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجامدا،
-          بە بەشداریی دەزگای ئاسایشی هەرێمی کوردستان و
-          بەشداریی چین و توێژە فەرمی و نافەرمییەکان.
-        </p>
-
-        <span class="activity-date">بەرواری چالاکی: ٢١/٣/٢٠٢٦</span>
-      </div>
-
-    </article>
-
-    <!-- چالاکی دووەم: پاککردنەوەی چەمچەماڵ -->
-
-    <article class="activity-entry">
-
-      <img src="file_0000000011188211830ca8fe507bd585.png" alt="پاککردنەوەی چەمچەماڵ">
-
-      <div class="activity-content">
-        <h2>پاککردنەوەی چەمچەماڵ</h2>
-
-        <p>
-          پاککردنەوەی چەمچەماڵ و هاوکاری کردن لەگەڵ
-          زیانلێکەوتووانی لافاو، بە مەبەستی پاککردنەوەی
-          شوێنە زیانلێکەوتووەکان و پشتیوانی لە هاووڵاتیانی
-          تووشبووی لافاو.
-        </p>
-
-        <span class="activity-date">
-          بەرواری چالاکی: ٩/١٢/٢٠٢٥
-        </span>
-      </div>
-
-    </article>
-
-    <a href="activities.html" class="back-link">
-      گەڕانەوە بۆ چالاکییەکان
-    </a>
-
-  </div>
-
+    <div style="text-align:center;">
+      <a href="activities.html" class="back-home">گەڕانەوە بۆ بوارەکانی چالاکییەکان</a>
+    </div>
+  </section>
 </main>
 
 <footer>
   <p>© 2026 <strong>NWAN FOUNDATION</strong> - هەموو مافەکان پارێزراون.</p>
 </footer>
 
+<script>
+  function toggleMenu() {
+    document.getElementById("navigation").classList.toggle("active");
+  }
+
+  const activities = {
+    environment: {
+      title: "🌳 ژینگەدۆستی",
+      description: "پاراستنی ژینگە و پاک و جوان ڕاگرتنی شوێنە گشتییەکان",
+      items: [
+        {
+          title: "هەڵمەتی پاککردنەوە",
+          date: "٢١/٣/٢٠٢٦",
+          image: "FB_IMG_1793805664782.jpg",
+          description: "لە ڕێکەوتی ٢١/٣/٢٠٢٦، بە هاوبەشیی دەزگای ئاسایشی هەرێمی کوردستان و بەشداریی چین و توێژە فەرمی و نافەرمییەکان، هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجام دا، بە ئامانجی پاراستنی ژینگە و جوانکردنی شوێنە گشتییەکان."
+        },
+        {
+          title: "پاککردنەوەی چەمچەماڵ",
+          date: "٩/١٢/٢٠٢٥",
+          image: "file_0000000011188211830ca8fe507bd585.png",
+          description: "چالاکیی پاککردنەوەی چەمچەماڵ و هاوکاریی زیانلێکەوتووانی لافاو، بە مەبەستی پاراستنی ژینگە و پشتیوانیی خەڵکی زیانلێکەوتوو."
+        }
+      ]
+    },
+
+    culture: {
+      title: "نیشتمانی و کەلتووری",
+      description: "پاراستن و زیندوو ڕاگرتنی ناسنامە و هێما نیشتمانییەکان",
+      items: [
+        {
+          title: "ئاڵای کوردستان",
+          date: "١٧/١٢/٢٠٢٥",
+          image: "Screenshot_20261104_190752_Instagram.jpg",
+          description: "هەڵمەتی نوێکردنەوە و بەرزکردنەوەی ئاڵای کوردستان لە سەرانسەری هەرێمی کوردستان، بە مەبەستی زیندوو ڕاگرتنی هێما و ناسنامەی نیشتمانی."
+        }
+      ]
+    },
+
+    education: {
+      title: "پەروەردە و خوێندن",
+      description: "پشتگیریی قوتابیان و ئاسانکردنی ڕێگای خوێندن",
+      items: [
+        {
+          title: "پێویستی قوتابی",
+          date: "١/١٠/٢٠٢٦",
+          image: "Screenshot_20261104_191637_Instagram.jpg",
+          description: "لە ڕێکەوتی ١/١٠/٢٠٢٦، تەواوی پێداویستییەکانی قوتابیمان بۆ سەدان قوتابی لە قوتابخانە بنەڕەتییەکانی کوردستان دابین کرد، بە ئامانجی ئاسانکردنی ڕێگای خوێندن و پشتگیریی قوتابیان."
+        }
+      ]
+    },
+
+    humanitarian: {
+      title: "خێرخوازی و هاوکاری مرۆیی",
+      description: "یارمەتیدانی خێزانە پێویستدارەکان و پشتگیریی مرۆیی",
+      items: [
+        {
+          title: "سەبەتەی خۆراک",
+          date: "١٠/٩/٢٠٢٦",
+          image: "file_00000000926081f793b9ef4c19c541a8.png",
+          description: "لە ڕۆژی ١٠/٩/٢٠٢٦، سەدان سەبەتەی خۆراکمان دابەش کرد بەسەر هاوڵاتیانی پێویستدار لە کوردستان، بۆ پشتگیریی خێزانەکان و دابینکردنی بەشێک لە پێداویستییە سەرەکییەکانیان."
+        }
+      ]
+    },
+
+    health: {
+      title: "تەندروستی و هۆشیاری",
+      description: "بەشداری لە چالاکییە تەندروستییەکان و یارمەتیدانی نەخۆشان",
+      items: [
+        {
+          title: "خوێنبەخشین",
+          date: "١٤/٩/٢٠٢٦",
+          image: "IMG_7acd4d2f-c18b-4716-9998-987e05c69a35.jpg",
+          description: "لە ڕێکەوتی ١٤/٩/٢٠٢٦، چالاکییەکی خوێنبەخشینمان ئەنجام دا، بە مەبەستی دابینکردنی خوێنی پێویست و یارمەتیدانی نەخۆشانی پێویستدار بە خوێن."
+        }
+      ]
+    },
+
+    social: {
+      title: "پشتگیریی کۆمەڵایەتی",
+      description: "گرنگیدان بە منداڵان، کەسانی بەساڵاچوو و چینە پێویستدارەکان",
+      items: []
+    },
+
+    youth: {
+      title: "گەنجان و گەشەپێدانی کۆمەڵگە",
+      description: "ڕاهێنان، بەشداری و پەرەپێدانی تواناکانی گەنجان",
+      items: []
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+  const category = activities[type];
+
+  const titleElement = document.getElementById("categoryTitle");
+  const descriptionElement = document.getElementById("categoryDescription");
+  const sectionTitle = document.getElementById("sectionTitle");
+  const list = document.getElementById("activitiesList");
+
+  if (!category) {
+    titleElement.textContent = "بوارەکە نەدۆزرایەوە";
+    descriptionElement.textContent = "تکایە بگەڕێوە و یەکێک لە بوارەکان هەڵبژێرە.";
+    sectionTitle.textContent = "بوارە بەردەستەکان";
+    list.innerHTML = `
+      <div class="empty-message">
+        <span class="empty-icon">🔎</span>
+        تکایە لە پەڕەی چالاکییەکانەوە بوارێکی دروست هەڵبژێرە.
+      </div>
+    `;
+  } else {
+    titleElement.textContent = category.title;
+    descriptionElement.textContent = category.description;
+    sectionTitle.textContent = "چالاکییەکانی " + category.title;
+
+    if (category.items.length === 0) {
+      list.innerHTML = `
+        <div class="empty-message">
+          <span class="empty-icon">🌱</span>
+          <h3>بەم زووانە چالاکییەکانمان لەم بوارەدا زیاد دەکەین</h3>
+          <p>سوپاس بۆ سەردانت. تکایە دواتر سەردانی ئەم بەشە بکەرەوە.</p>
+        </div>
+      `;
+    } else {
+      category.items.forEach((activity) => {
+        const card = document.createElement("article");
+        card.className = "activity-card";
+
+        const image = document.createElement("img");
+        image.className = "activity-image";
+        image.src = activity.image;
+        image.alt = activity.title;
+        image.loading = "lazy";
+
+        const info = document.createElement("div");
+        info.className = "activity-info";
+
+        const heading = document.createElement("h2");
+        heading.textContent = activity.title;
+
+        const date = document.createElement("span");
+        date.className = "activity-date";
+        date.textContent = activity.date;
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = activity.description;
+
+        info.append(heading, date, paragraph);
+        card.append(image, info);
+        list.appendChild(card);
+      });
+    }
+  }
+</script>
 </body>
 </html>
