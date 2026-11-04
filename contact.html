@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پەیوەندی کردن | NWAN FOUNDATION</title>
+
+  <style>
+    @font-face {
+      font-family: 'K24 Kurdish';
+      src: url('./K24KurdishBold-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --deep-teal: #005B60;
+      --turquoise: #078F91;
+      --gold: #C69A43;
+      --white: #FFFFFF;
+      --light-bg: #F4F8F7;
+      --text: #234447;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, a, h1, h2, h3, p, span {
+      font-family: 'K24 Kurdish', sans-serif;
+    }
+
+    body {
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.9;
+      min-height: 100vh;
+    }
+
+    header {
+      background: white;
+      padding: 15px 24px;
+      box-shadow: 0 3px 18px rgba(0, 60, 65, 0.08);
+    }
+
+    .header-content {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      color: var(--deep-teal);
+      font-size: 19px;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--gold);
+      font-size: 11px;
+      direction: ltr;
+    }
+
+    .back {
+      color: var(--deep-teal);
+      font-size: 14px;
+      padding: 8px 15px;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+    }
+
+    .page {
+      max-width: 850px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .title h1 {
+      color: var(--deep-teal);
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .title span {
+      display: block;
+      width: 65px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 5px;
+      margin: 10px auto;
+    }
+
+    .title p {
+      color: #617779;
+      font-size: 14px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0, 70, 75, 0.07);
+      border-top: 5px solid var(--gold);
+    }
+
+    .phone-title {
+      text-align: center;
+      color: var(--deep-teal);
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+
+    .phone-number {
+      direction: ltr;
+      text-align: center;
+      color: var(--deep-teal);
+      font-size: 27px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .app-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .app-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 15px 10px;
+      border-radius: 12px;
+      background: #F4F8F7;
+      border: 1px solid #E3ECEA;
+      color: var(--deep-teal);
+      transition: 0.3s;
+    }
+
+    .app-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+
+    .app-link img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .app-link span {
+      font-size: 16px;
+    }
+
+    .social-section {
+      text-align: center;
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid #E5ECEA;
+    }
+
+    .social-section h2 {
+      color: var(--deep-teal);
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .social-logo {
+      width: 95px;
+      height: 75px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .foundation-name {
+      color: var(--deep-teal);
+      font-size: 20px;
+      direction: ltr;
+      text-align: center;
+    }
+
+    .location {
+      margin-top: 30px;
+      padding: 17px;
+      background: #E8F3F1;
+      border-radius: 12px;
+      text-align: center;
+      color: var(--deep-teal);
+      font-size: 17px;
+    }
+
+    footer {
+      margin-top: 35px;
+      background: #003F43;
+      color: #E7F1EF;
+      text-align: center;
+      padding: 22px 12px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #E2BC6D;
+    }
+
+    @media (max-width: 550px) {
+      .app-links {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 22px 16px;
+      }
+
+      .title h1 {
+        font-size: 26px;
+      }
+
+      .phone-number {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-content">
+
+      <a href="index.html" class="brand">
+        <img src="file_00000000224c8246a91218ab6ae16654.png"
+             alt="لۆگۆی بنیاتی نوان">
+        <div class="brand-name">
+          بنیاتی نوان
+          <span>NWAN FOUNDATION</span>
+        </div>
+      </a>
+
+      <a href="index.html" class="back">گەڕانەوە</a>
+
+    </div>
+  </header>
+
+  <main class="page">
+
+    <div class="title">
+      <h1>پەیوەندی کردن</h1>
+      <span></span>
+      <p>بۆ پەیوەندیکردن و زانیاری زیاتر، لە ڕێگەی ئەم کەناڵانەوە پەیوەندیمان پێوە بکە.</p>
+    </div>
+
+    <section class="contact-card">
+
+      <h2 class="phone-title">ژمارەی تەلەفۆن</h2>
+
+      <p class="phone-number">07771503474</p>
+
+      <div class="app-links">
+
+        <a class="app-link"
+           href="https://wa.me/9647771503474"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <img src="IMG_be34feee-54e5-4f4e-8d2b-600cbc6915bd.png"
+               alt="WhatsApp">
+
+          <span>WhatsApp</span>
+        </a>
+
+        <a class="app-link"
+           href="viber://chat?number=%2B9647771503474">
+
+          <img src="IMG_d565ab20-e83b-42ff-8169-13b2552431d3.png"
+               alt="Viber">
+
+          <span>Viber</span>
+        </a>
+
+      </div>
+
+      <div class="social-section">
+
+        <h2>تۆڕە کۆمەڵایەتییەکان</h2>
+
+        <img
+          class="social-logo"
+          src="IMG_9e380803-e8cc-4123-9b40-4c6e793e54fe.jpg"
+          alt="Instagram and Facebook">
+
+        <h3 class="foundation-name">NWAN FUNDATION</h3>
+
+      </div>
+
+      <div class="location">
+        ناونیشان: هەولێر
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 <strong>NWAN FOUNDATION</strong> -
+    هەموو مافەکان پارێزراون.
+  </footer>
+
+</body>
+</html>
