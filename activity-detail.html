@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وردەکاریی چالاکی | NWAN FOUNDATION</title>
+
+  <style>
+    @font-face {
+      font-family: 'K24 Kurdish';
+      src: url('./K24KurdishBold-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      --deep-teal: #005B60;
+      --turquoise: #078F91;
+      --gold: #C69A43;
+      --light-bg: #F4F8F7;
+      --text: #234447;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, a, h1, h2, h3, p, span {
+      font-family: 'K24 Kurdish', sans-serif;
+    }
+
+    body {
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a { text-decoration: none; }
+
+    header {
+      background: white;
+      box-shadow: 0 3px 18px rgba(0,60,65,0.08);
+    }
+
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      color: var(--deep-teal);
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .detail-heading {
+      background: linear-gradient(135deg, #00494D, #078F91);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .detail-heading h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .detail-heading p {
+      color: #F0FAF9;
+      font-size: 14px;
+    }
+
+    .detail-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .detail-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,70,75,0.07);
+      border: 1px solid #E0ECE9;
+    }
+
+    .detail-image {
+      display: none;
+      width: 100%;
+      max-height: 430px;
+      object-fit: cover;
+    }
+
+    .detail-content {
+      padding: 35px;
+    }
+
+    .detail-content h2 {
+      color: var(--deep-teal);
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .detail-content p {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 2.2;
+      text-align: justify;
+      margin-bottom: 18px;
+    }
+
+    .detail-date {
+      display: none;
+      background: #F8EED9;
+      color: #806020;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 25px;
+      background: var(--deep-teal);
+      color: white;
+      padding: 11px 25px;
+      border-radius: 9px;
+    }
+
+    .back-link:hover { background: var(--turquoise); }
+
+    footer {
+      background: #003F43;
+      color: #E7F1EF;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+      margin-top: 60px;
+    }
+
+    footer strong { color: #E2BC6D; }
+
+    @media (max-width: 600px) {
+      .detail-heading h1 { font-size: 24px; }
+      .detail-content { padding: 22px 18px; }
+      .detail-content h2 { font-size: 20px; }
+      .detail-container { margin: 30px auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="index.html" class="brand">
+      <img src="file_00000000224c8246a91218ab6ae16654.png" alt="لۆگۆی بنیاتی نوان">
+      <div class="brand-name">
+        بنیاتی نوان
+        <span>NWAN FOUNDATION</span>
+      </div>
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <section class="detail-heading">
+    <h1 id="pageTitle">چالاکییەکانمان</h1>
+    <p>بنیاتی نوان | NWAN FOUNDATION</p>
+  </section>
+
+  <div class="detail-container">
+
+    <article class="detail-card">
+
+      <img id="detailImage" class="detail-image" src="" alt="وێنەی چالاکی">
+
+      <div class="detail-content">
+
+        <h2 id="detailTitle">وردەکاریی چالاکی</h2>
+
+        <p id="detailDescription"></p>
+
+        <p id="detailExtra"></p>
+
+        <span id="detailDate" class="detail-date"></span>
+
+        <br>
+
+        <a href="activities.html" class="back-link">
+          گەڕانەوە بۆ چالاکییەکان
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 <strong>NWAN FOUNDATION</strong> - هەموو مافەکان پارێزراون.</p>
+</footer>
+
+<script>
+  const activities = {
+
+    environment: {
+      title: "ژینگەدۆستی",
+      heading: "هەڵمەتی پاککردنەوە",
+      description: "لە ٢١/٣/٢٠٢٦ هەنگاوێکمان بۆ پاراستنی ژینگە هەڵگرت و هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجامدا، بە بەشداریی دەزگای ئاسایشی هەرێمی کوردستان و بەشداریی چین و توێژە فەرمی و نافەرمییەکان.",
+      extra: "ئەم هەنگاوە بۆ بەرزکردنەوەی هۆشیاریی ژینگەیی و هاوکاریی هاووڵاتیان بۆ پاراستنی ژینگە ئەنجام درا.",
+      date: "بەرواری چالاکی: ٢١/٣/٢٠٢٦",
+      image: "FB_IMG_1793805664782.jpg"
+    },
+
+    culture: {
+      title: "نیشتمانی و کەلتووری",
+      heading: "چالاکییە نیشتمانی و کەلتوورییەکان",
+      description: "ئەم بوارە تایبەتە بە پاراستن و ناساندنی کەلتوور، مێژوو، زمان و ناسنامەی کوردی.",
+      extra: "ئامانجمان بەشدارییە لە پاراستنی میراتی کەلتووری و هاندانی نەوەی نوێ بۆ ناسینی کەلتوور و مێژووی خۆیان.",
+      date: "",
+      image: ""
+    },
+
+    humanitarian: {
+      title: "خێرخوازی و هاوکاری مرۆیی",
+      heading: "چالاکییە خێرخوازییەکان",
+      description: "ئەم بوارە بۆ پێشکەشکردنی یارمەتی و پشتگیریی مرۆیی بە خێزان و تاکە پێویستدارەکانە.",
+      extra: "ئامانج بریتییە لە بڵاوکردنەوەی ڕۆحی هاوکاری و پشتیوانی لە کەسانی پێویستدار بەبێ جیاوازی.",
+      date: "",
+      image: ""
+    },
+
+    education: {
+      title: "پەروەردە و خوێندن",
+      heading: "چالاکییەکانی پەروەردە و خوێندن",
+      description: "ئەم بوارە پشتگیریی خوێندکاران و هاندانی فێربوون و پەرەپێدانی زانیاری دەگرێتەوە.",
+      extra: "ئامانجمان دروستکردنی دەرفەتی زیاتر بۆ فێربوون و پێشکەوتنی خوێندکارانە.",
+      date: "",
+      image: ""
+    },
+
+    health: {
+      title: "تەندروستی و هۆشیاری",
+      heading: "چالاکییەکانی تەندروستی",
+      description: "ئەم بوارە گرنگی بە بڵاوکردنەوەی هۆشیاری تەندروستی و پێشگیری لە نەخۆشییەکان دەدات.",
+      extra: "بەهۆی چالاکییە هۆشیارییەکانەوە هەوڵ دەدەین زانیاریی تەندروستی بگاتە هەموو چین و توێژەکانی کۆمەڵگە.",
+      date: "",
+      image: ""
+    },
+
+    social: {
+      title: "پشتگیریی کۆمەڵایەتی",
+      heading: "چالاکییە کۆمەڵایەتییەکان",
+      description: "ئەم بوارە تایبەتە بە پشتگیریی منداڵان، کەسانی بەساڵاچوو و چینە پێویستدارەکانی کۆمەڵگە.",
+      extra: "ئامانجمان بەهێزکردنی هاوکاریی کۆمەڵایەتی و پاراستنی کەرامەتی مرۆڤەکانە.",
+      date: "",
+      image: ""
+    },
+
+    youth: {
+      title: "گەنجان و گەشەپێدانی کۆمەڵگە",
+      heading: "چالاکییەکانی گەنجان",
+      description: "ئەم بوارە گرنگی بە ڕاهێنان، بەشداریی گەنجان و پەرەپێدانی تواناکانیان دەدات.",
+      extra: "ئامانجمان هاندانی گەنجانە بۆ بەشداریی کاریگەر لە گەشەپێدانی کۆمەڵگە.",
+      date: "",
+      image: ""
+    }
+
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+  const activity = activities[type];
+
+  if (activity) {
+    document.title = activity.title + " | NWAN FOUNDATION";
+
+    document.getElementById("pageTitle").textContent = activity.title;
+    document.getElementById("detailTitle").textContent = activity.heading;
+    document.getElementById("detailDescription").textContent = activity.description;
+    document.getElementById("detailExtra").textContent = activity.extra;
+
+    if (activity.date) {
+      const dateElement = document.getElementById("detailDate");
+      dateElement.textContent = activity.date;
+      dateElement.style.display = "inline-block";
+    }
+
+    if (activity.image) {
+      const imageElement = document.getElementById("detailImage");
+      imageElement.src = activity.image;
+      imageElement.style.display = "block";
+    }
+
+  } else {
+    document.getElementById("pageTitle").textContent = "چالاکی نەدۆزرایەوە";
+    document.getElementById("detailTitle").textContent = "بەشی داواکراو نەدۆزرایەوە";
+    document.getElementById("detailDescription").textContent =
+      "تکایە بگەڕێوە بۆ پەڕەی چالاکییەکان و بەشێکی تر هەڵبژێرە.";
+    document.getElementById("detailExtra").textContent = "";
+  }
+</script>
+
+</body>
+</html>
