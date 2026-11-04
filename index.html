@@ -1,1 +1,482 @@
 
+
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="بنیاتی نوان، بۆ خزمەتکردنی خەڵکی کوردستان و پێشکەشکردنی یارمەتیی ماددی و مرۆیی.">
+  <title>بنیاتی نوان | NWAN FOUNDATION</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --deep-teal: #005B60;
+      --turquoise: #078F91;
+      --gold: #C69A43;
+      --white: #FFFFFF;
+      --light-bg: #F4F8F7;
+      --text: #234447;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Header */
+    header {
+      background: var(--white);
+      box-shadow: 0 3px 18px rgba(0, 60, 65, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      color: var(--deep-teal);
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 1px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--deep-teal);
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: var(--deep-teal);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #00494D, #078F91);
+      color: white;
+      text-align: center;
+      padding: 75px 20px 85px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 50%;
+      top: -190px;
+      right: -100px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 50%;
+      bottom: -150px;
+      left: -70px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 43px);
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #F1CD7C;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #F0FAF9;
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #183D3E;
+      padding: 12px 30px;
+      border-radius: 9px;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #E0B75E;
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 75px 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      color: var(--deep-teal);
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .section-title span {
+      display: block;
+      width: 65px;
+      height: 4px;
+      border-radius: 5px;
+      background: var(--gold);
+      margin: 10px auto;
+    }
+
+    .section-title p {
+      color: #617779;
+      font-size: 14px;
+    }
+
+    /* About */
+    .about-card {
+      background: white;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 8px 30px rgba(0, 70, 75, 0.07);
+      border-right: 5px solid var(--gold);
+    }
+
+    .about-card p {
+      font-size: 16px;
+      line-height: 2.2;
+      color: var(--text);
+      text-align: justify;
+    }
+
+    .about-highlight {
+      color: var(--turquoise);
+      font-weight: 800;
+    }
+
+    /* Values */
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .value-card {
+      background: white;
+      padding: 28px 22px;
+      text-align: center;
+      border-radius: 14px;
+      border-bottom: 4px solid var(--gold);
+      box-shadow: 0 5px 20px rgba(0, 70, 75, 0.05);
+      transition: 0.3s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .value-icon {
+      width: 55px;
+      height: 55px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: #E5F3F1;
+      color: var(--deep-teal);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+    }
+
+    .value-card h3 {
+      color: var(--deep-teal);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      color: #617779;
+      font-size: 13px;
+    }
+
+    /* Call to action */
+    .cta {
+      background: var(--deep-teal);
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .cta h2 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #E0EEEE;
+      margin-bottom: 23px;
+    }
+
+    /* Footer */
+    footer {
+      background: #003F43;
+      color: #E7F1EF;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #E2BC6D;
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        flex-wrap: wrap;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px;
+        border-top: 1px solid #E8F0EF;
+      }
+
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card {
+        padding: 24px 20px;
+      }
+
+      .section {
+        padding: 55px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar">
+
+      <a href="#home" class="brand">
+        <img
+          src="file_00000000224c8246a91218ab6ae16654.png"
+          alt="لۆگۆی بنیاتی نوان"
+        >
+        <div class="brand-name">
+          بنیاتی نوان
+          <span>NWAN FOUNDATION</span>
+        </div>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰ پەڕەکان</button>
+
+      <nav id="navigation">
+        <a href="#home">سەرەکی</a>
+        <a href="#about">دەربارەی ئێمە</a>
+        <a href="#values">بەهاکانمان</a>
+        <a href="#contact">پەیوەندیمان پێوە بکە</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>بەیەکەوە بۆ <span>داهاتوویەکی باشتر</span></h1>
+        <p>
+          بنیاتی نوان، هەنگاوێکە بەرەو کۆمەڵگەیەکی پڕ لە هاوکاری،
+          میهرەبانی و هیوای زیاتر.
+        </p>
+        <a href="#about" class="btn">زیاتر بزانە</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+
+      <div class="section-title">
+        <h2>دەربارەی ئێمە</h2>
+        <span></span>
+        <p>ناسین بە ئامانج و پەیامی بنیاتی نوان</p>
+      </div>
+
+      <div class="about-card">
+        <p>
+          <span class="about-highlight">بنیاتی نوان</span>
+          دامەزراوەیەکی مرۆییە کە ئامانجی خزمەتکردنی هەموو چین و
+          توێژەکانی کوردستانە، بەبێ جیاوازی. ئێمە هەوڵ دەدەین بە
+          پێشکەشکردنی یارمەتییە ماددی و مرۆییەکان، پشتگیریی خێزان
+          و تاکە پێویستدارەکان بکەین و بەشداری لە دروستکردنی
+          کۆمەڵگەیەکی هاوکارتر، دادپەروەرتر و پڕ هیواتر بکەین.
+          باوەڕمان وایە هاوکاری و یەکگرتوویی دەتوانن ژیانی مرۆڤەکان
+          بەرەو باشتر بگۆڕن.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="section" id="values">
+
+      <div class="section-title">
+        <h2>بەهاکانمان</h2>
+        <span></span>
+        <p>ئەو بنەمایانەی ڕێنمایی کارەکانمان دەکەن</p>
+      </div>
+
+      <div class="values">
+
+        <div class="value-card">
+          <div class="value-icon">♡</div>
+          <h3>مرۆڤایەتی</h3>
+          <p>گرنگیدان بە مرۆڤ و پاراستنی کەرامەتی هەمووان.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>هاوکاری</h3>
+          <p>بەیەکەوە کارکردن بۆ پێشکەوتنی کۆمەڵگە.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">✦</div>
+          <h3>متمانە و ڕاستگۆیی</h3>
+          <p>ئەنجامدانی کارەکان بە بەرپرسیاری و ڕوونی.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <h2>بەشێک بە لە گۆڕانکارییەکی باش</h2>
+      <p>هاوکارییەکی بچووک دەتوانێت هیوایەکی گەورە دروست بکات.</p>
+      <a href="mailto:info@nwanfoundation.example" class="btn">
+        پەیوەندیمان پێوە بکە
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      © 2026 <strong>NWAN FOUNDATION</strong> -
+      هەموو مافەکان پارێزراون.
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navigation").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
