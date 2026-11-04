@@ -7,9 +7,6 @@
   <meta name="description" content="بنیاتی نوان، بۆ خزمەتکردنی خەڵکی کوردستان و پێشکەشکردنی یارمەتیی ماددی و مرۆیی.">
   <title>بنیاتی نوان | NWAN FOUNDATION</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <style>
     @font-face {
       font-family: 'K24 Kurdish';
@@ -34,12 +31,7 @@
       box-sizing: border-box;
     }
 
-    body,
-    button,
-    input,
-    textarea,
-    a,
-    h1, h2, h3, h4, p, span {
+    body, button, input, textarea, a, h1, h2, h3, h4, p, span {
       font-family: 'K24 Kurdish', sans-serif;
     }
 
@@ -49,9 +41,7 @@
       line-height: 1.9;
     }
 
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
 
     header {
       background: var(--white);
@@ -112,9 +102,7 @@
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: var(--gold);
-    }
+    nav a:hover { color: var(--gold); }
 
     .menu-btn {
       display: none;
@@ -182,9 +170,7 @@
       margin-bottom: 15px;
     }
 
-    .hero h1 span {
-      color: #F1CD7C;
-    }
+    .hero h1 span { color: #F1CD7C; }
 
     .hero p {
       font-size: 16px;
@@ -260,7 +246,7 @@
       font-weight: 800;
     }
 
-    /* بەشی چالاکییەکان */
+    /* بەشی چالاکیی ژینگەدۆستی */
 
     .activities-section {
       background: #EDF5F3;
@@ -324,6 +310,7 @@
     }
 
     .activity-more-btn {
+      display: inline-block;
       background: var(--deep-teal);
       color: white;
       border: none;
@@ -350,9 +337,7 @@
       animation: showDetails 0.4s ease;
     }
 
-    .activity-details.show {
-      display: block;
-    }
+    .activity-details.show { display: block; }
 
     .activity-details h4 {
       color: var(--deep-teal);
@@ -378,14 +363,8 @@
     }
 
     @keyframes showDetails {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .values {
@@ -405,9 +384,7 @@
       transition: 0.3s;
     }
 
-    .value-card:hover {
-      transform: translateY(-5px);
-    }
+    .value-card:hover { transform: translateY(-5px); }
 
     .value-icon {
       width: 55px;
@@ -457,18 +434,12 @@
       font-size: 13px;
     }
 
-    footer strong {
-      color: #E2BC6D;
-    }
+    footer strong { color: #E2BC6D; }
 
     @media (max-width: 760px) {
-      .navbar {
-        flex-wrap: wrap;
-      }
+      .navbar { flex-wrap: wrap; }
 
-      .menu-btn {
-        display: block;
-      }
+      .menu-btn { display: block; }
 
       nav {
         display: none;
@@ -478,46 +449,28 @@
         gap: 0;
       }
 
-      nav.active {
-        display: flex;
-      }
+      nav.active { display: flex; }
 
       nav a {
         padding: 10px;
         border-top: 1px solid #E8F0EF;
       }
 
-      .hero {
-        padding: 60px 20px;
-      }
+      .hero { padding: 60px 20px; }
 
-      .values {
-        grid-template-columns: 1fr;
-      }
+      .values { grid-template-columns: 1fr; }
 
-      .about-card {
-        padding: 24px 20px;
-      }
+      .about-card { padding: 24px 20px; }
 
-      .section {
-        padding: 55px 18px;
-      }
+      .section { padding: 55px 18px; }
 
-      .activity-image {
-        height: 230px;
-      }
+      .activity-image { height: 230px; }
 
-      .activity-content {
-        padding: 22px 17px;
-      }
+      .activity-content { padding: 22px 17px; }
 
-      .activity-content h3 {
-        font-size: 21px;
-      }
+      .activity-content h3 { font-size: 21px; }
 
-      .activity-details {
-        padding: 18px;
-      }
+      .activity-details { padding: 18px; }
     }
   </style>
 </head>
@@ -527,11 +480,8 @@
   <header>
     <div class="navbar">
 
-      <a href="#home" class="brand">
-        <img
-          src="file_00000000224c8246a91218ab6ae16654.png"
-          alt="لۆگۆی بنیاتی نوان"
-        >
+      <a href="index.html" class="brand">
+        <img src="file_00000000224c8246a91218ab6ae16654.png" alt="لۆگۆی بنیاتی نوان">
         <div class="brand-name">
           بنیاتی نوان
           <span>NWAN FOUNDATION</span>
@@ -541,10 +491,10 @@
       <button class="menu-btn" onclick="toggleMenu()">☰ پەڕەکان</button>
 
       <nav id="navigation">
-        <a href="#home">سەرەکی</a>
-        <a href="#about">دەربارەی ئێمە</a>
-        <a href="#activities">چالاکییەکان</a>
-        <a href="#values">بەهاکانمان</a>
+        <a href="index.html">سەرەکی</a>
+        <a href="index.html#about">دەربارەی ئێمە</a>
+        <a href="activities.html">چالاکییەکان</a>
+        <a href="index.html#values">بەهاکانمان</a>
         <a href="contact.html" class="contact-nav">پەیوەندی کردن</a>
       </nav>
 
@@ -587,8 +537,6 @@
 
     </section>
 
-    <!-- بەشی چالاکییەکان -->
-
     <section class="activities-section" id="activities">
 
       <div class="activities-container">
@@ -597,6 +545,7 @@
           <h2>چالاکییەکانمان</h2>
           <span></span>
           <p>هەنگاوەکانمان بۆ خزمەتکردن و گەشەپێدانی کۆمەڵگە</p>
+          <a href="activities.html" class="activity-more-btn">بینینی هەموو چالاکییەکان</a>
         </div>
 
         <div class="activity-card">
@@ -604,7 +553,7 @@
           <img
             class="activity-image"
             src="FB_IMG_1793805664782.jpg"
-            alt="هەڵمەتی پاککردنەوە و چالاکییە ژینگەدۆستییەکان"
+            alt="هەڵمەتی پاککردنەوە"
           >
 
           <div class="activity-content">
@@ -628,20 +577,14 @@
             </button>
 
             <div class="activity-details" id="activityDetails">
-
               <h4>هەڵمەتی پاککردنەوەی هەرەوەزی کوردستان</h4>
-
               <p>
                 لە ٢١/٣/٢٠٢٦ هەنگاوێکمان بۆ پاراستنی ژینگە هەڵگرت
                 و هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجامدا،
                 بە بەشداریی دەزگای ئاسایشی هەرێمی کوردستان و
                 بەشداریی چین و توێژە فەرمی و نافەرمییەکان.
               </p>
-
-              <span class="activity-date">
-                بەرواری چالاکی: ٢١/٣/٢٠٢٦
-              </span>
-
+              <span class="activity-date">بەرواری چالاکی: ٢١/٣/٢٠٢٦</span>
             </div>
 
           </div>
