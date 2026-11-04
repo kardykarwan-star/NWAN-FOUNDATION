@@ -104,46 +104,46 @@
       padding: 0 20px;
     }
 
-    .detail-card {
+    .activity-entry {
       background: white;
       border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 8px 30px rgba(0,70,75,0.07);
       border: 1px solid #E0ECE9;
+      margin-bottom: 30px;
     }
 
-    .detail-image {
-      display: none;
+    .activity-entry img {
       width: 100%;
       max-height: 430px;
       object-fit: cover;
+      display: block;
     }
 
-    .detail-content {
-      padding: 35px;
+    .activity-content {
+      padding: 30px;
     }
 
-    .detail-content h2 {
+    .activity-content h2 {
       color: var(--deep-teal);
-      font-size: 24px;
-      margin-bottom: 15px;
+      font-size: 23px;
+      margin-bottom: 12px;
     }
 
-    .detail-content p {
+    .activity-content p {
       color: var(--text);
       font-size: 15px;
       line-height: 2.2;
       text-align: justify;
-      margin-bottom: 18px;
     }
 
-    .detail-date {
-      display: none;
+    .activity-date {
+      display: inline-block;
+      margin-top: 18px;
       background: #F8EED9;
       color: #806020;
-      padding: 8px 16px;
+      padding: 7px 15px;
       border-radius: 8px;
-      margin-top: 10px;
       font-size: 13px;
     }
 
@@ -171,8 +171,8 @@
 
     @media (max-width: 600px) {
       .detail-heading h1 { font-size: 24px; }
-      .detail-content { padding: 22px 18px; }
-      .detail-content h2 { font-size: 20px; }
+      .activity-content { padding: 22px 18px; }
+      .activity-content h2 { font-size: 20px; }
       .detail-container { margin: 30px auto; }
     }
   </style>
@@ -195,35 +195,59 @@
 <main>
 
   <section class="detail-heading">
-    <h1 id="pageTitle">چالاکییەکانمان</h1>
-    <p>بنیاتی نوان | NWAN FOUNDATION</p>
+    <h1>ژینگەدۆستی</h1>
+    <p>چالاکییەکانمان بۆ پاراستنی ژینگە</p>
   </section>
 
   <div class="detail-container">
 
-    <article class="detail-card">
+    <!-- چالاکی یەکەم: هەڵمەتی پاککردنەوە -->
 
-      <img id="detailImage" class="detail-image" src="" alt="وێنەی چالاکی">
+    <article class="activity-entry">
 
-      <div class="detail-content">
+      <img src="FB_IMG_1793805664782.jpg" alt="هەڵمەتی پاککردنەوەی هەرەوەزی کوردستان">
 
-        <h2 id="detailTitle">وردەکاریی چالاکی</h2>
+      <div class="activity-content">
+        <h2>هەڵمەتی پاککردنەوە</h2>
 
-        <p id="detailDescription"></p>
+        <p>
+          لە ٢١/٣/٢٠٢٦ هەنگاوێکمان بۆ پاراستنی ژینگە هەڵگرت
+          و هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجامدا،
+          بە بەشداریی دەزگای ئاسایشی هەرێمی کوردستان و
+          بەشداریی چین و توێژە فەرمی و نافەرمییەکان.
+        </p>
 
-        <p id="detailExtra"></p>
-
-        <span id="detailDate" class="detail-date"></span>
-
-        <br>
-
-        <a href="activities.html" class="back-link">
-          گەڕانەوە بۆ چالاکییەکان
-        </a>
-
+        <span class="activity-date">بەرواری چالاکی: ٢١/٣/٢٠٢٦</span>
       </div>
 
     </article>
+
+    <!-- چالاکی دووەم: پاککردنەوەی چەمچەماڵ -->
+
+    <article class="activity-entry">
+
+      <img src="file_0000000011188211830ca8fe507bd585.png" alt="پاککردنەوەی چەمچەماڵ">
+
+      <div class="activity-content">
+        <h2>پاککردنەوەی چەمچەماڵ</h2>
+
+        <p>
+          پاککردنەوەی چەمچەماڵ و هاوکاری کردن لەگەڵ
+          زیانلێکەوتووانی لافاو، بە مەبەستی پاککردنەوەی
+          شوێنە زیانلێکەوتووەکان و پشتیوانی لە هاووڵاتیانی
+          تووشبووی لافاو.
+        </p>
+
+        <span class="activity-date">
+          بەرواری چالاکی: ٩/١٢/٢٠٢٥
+        </span>
+      </div>
+
+    </article>
+
+    <a href="activities.html" class="back-link">
+      گەڕانەوە بۆ چالاکییەکان
+    </a>
 
   </div>
 
@@ -232,107 +256,6 @@
 <footer>
   <p>© 2026 <strong>NWAN FOUNDATION</strong> - هەموو مافەکان پارێزراون.</p>
 </footer>
-
-<script>
-  const activities = {
-
-    environment: {
-      title: "ژینگەدۆستی",
-      heading: "هەڵمەتی پاککردنەوە",
-      description: "لە ٢١/٣/٢٠٢٦ هەنگاوێکمان بۆ پاراستنی ژینگە هەڵگرت و هەڵمەتی پاککردنەوەی هەرەوەزی کوردستانمان ئەنجامدا، بە بەشداریی دەزگای ئاسایشی هەرێمی کوردستان و بەشداریی چین و توێژە فەرمی و نافەرمییەکان.",
-      extra: "ئەم هەنگاوە بۆ بەرزکردنەوەی هۆشیاریی ژینگەیی و هاوکاریی هاووڵاتیان بۆ پاراستنی ژینگە ئەنجام درا.",
-      date: "بەرواری چالاکی: ٢١/٣/٢٠٢٦",
-      image: "FB_IMG_1793805664782.jpg"
-    },
-
-    culture: {
-      title: "نیشتمانی و کەلتووری",
-      heading: "چالاکییە نیشتمانی و کەلتوورییەکان",
-      description: "ئەم بوارە تایبەتە بە پاراستن و ناساندنی کەلتوور، مێژوو، زمان و ناسنامەی کوردی.",
-      extra: "ئامانجمان بەشدارییە لە پاراستنی میراتی کەلتووری و هاندانی نەوەی نوێ بۆ ناسینی کەلتوور و مێژووی خۆیان.",
-      date: "",
-      image: ""
-    },
-
-    humanitarian: {
-      title: "خێرخوازی و هاوکاری مرۆیی",
-      heading: "چالاکییە خێرخوازییەکان",
-      description: "ئەم بوارە بۆ پێشکەشکردنی یارمەتی و پشتگیریی مرۆیی بە خێزان و تاکە پێویستدارەکانە.",
-      extra: "ئامانج بریتییە لە بڵاوکردنەوەی ڕۆحی هاوکاری و پشتیوانی لە کەسانی پێویستدار بەبێ جیاوازی.",
-      date: "",
-      image: ""
-    },
-
-    education: {
-      title: "پەروەردە و خوێندن",
-      heading: "چالاکییەکانی پەروەردە و خوێندن",
-      description: "ئەم بوارە پشتگیریی خوێندکاران و هاندانی فێربوون و پەرەپێدانی زانیاری دەگرێتەوە.",
-      extra: "ئامانجمان دروستکردنی دەرفەتی زیاتر بۆ فێربوون و پێشکەوتنی خوێندکارانە.",
-      date: "",
-      image: ""
-    },
-
-    health: {
-      title: "تەندروستی و هۆشیاری",
-      heading: "چالاکییەکانی تەندروستی",
-      description: "ئەم بوارە گرنگی بە بڵاوکردنەوەی هۆشیاری تەندروستی و پێشگیری لە نەخۆشییەکان دەدات.",
-      extra: "بەهۆی چالاکییە هۆشیارییەکانەوە هەوڵ دەدەین زانیاریی تەندروستی بگاتە هەموو چین و توێژەکانی کۆمەڵگە.",
-      date: "",
-      image: ""
-    },
-
-    social: {
-      title: "پشتگیریی کۆمەڵایەتی",
-      heading: "چالاکییە کۆمەڵایەتییەکان",
-      description: "ئەم بوارە تایبەتە بە پشتگیریی منداڵان، کەسانی بەساڵاچوو و چینە پێویستدارەکانی کۆمەڵگە.",
-      extra: "ئامانجمان بەهێزکردنی هاوکاریی کۆمەڵایەتی و پاراستنی کەرامەتی مرۆڤەکانە.",
-      date: "",
-      image: ""
-    },
-
-    youth: {
-      title: "گەنجان و گەشەپێدانی کۆمەڵگە",
-      heading: "چالاکییەکانی گەنجان",
-      description: "ئەم بوارە گرنگی بە ڕاهێنان، بەشداریی گەنجان و پەرەپێدانی تواناکانیان دەدات.",
-      extra: "ئامانجمان هاندانی گەنجانە بۆ بەشداریی کاریگەر لە گەشەپێدانی کۆمەڵگە.",
-      date: "",
-      image: ""
-    }
-
-  };
-
-  const params = new URLSearchParams(window.location.search);
-  const type = params.get("type");
-  const activity = activities[type];
-
-  if (activity) {
-    document.title = activity.title + " | NWAN FOUNDATION";
-
-    document.getElementById("pageTitle").textContent = activity.title;
-    document.getElementById("detailTitle").textContent = activity.heading;
-    document.getElementById("detailDescription").textContent = activity.description;
-    document.getElementById("detailExtra").textContent = activity.extra;
-
-    if (activity.date) {
-      const dateElement = document.getElementById("detailDate");
-      dateElement.textContent = activity.date;
-      dateElement.style.display = "inline-block";
-    }
-
-    if (activity.image) {
-      const imageElement = document.getElementById("detailImage");
-      imageElement.src = activity.image;
-      imageElement.style.display = "block";
-    }
-
-  } else {
-    document.getElementById("pageTitle").textContent = "چالاکی نەدۆزرایەوە";
-    document.getElementById("detailTitle").textContent = "بەشی داواکراو نەدۆزرایەوە";
-    document.getElementById("detailDescription").textContent =
-      "تکایە بگەڕێوە بۆ پەڕەی چالاکییەکان و بەشێکی تر هەڵبژێرە.";
-    document.getElementById("detailExtra").textContent = "";
-  }
-</script>
 
 </body>
 </html>
